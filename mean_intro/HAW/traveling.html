@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Objects
+            let tigger = {"character" : "Tigger"};
+            let pooh = {"character" : "Winnie the Pooh"};
+            let bees = {"character" : "Bees"};
+            let piglet = {"character" : "Piglet"};
+            let owl = {"character" : "Owl"};
+            let robin = {"character" : "Chistopher Robin"};
+            let rabbit = {"character" : "Rabbit"};
+            let gopher = {"character" : "Gopher"};
+            let kanga = {"character" : "Kanga"};
+            let eyeore= {"character" : "Eyeore"};
+            let heffalumps = {"character" : "Heffalumps"};
+
+        // Directions
+        tigger.north = pooh;
+        pooh.south = tigger;
+        pooh.west = piglet;
+        pooh.east = bees;
+        bees.west = pooh;
+        bees.north = rabbit;
+        piglet.east = pooh;
+        piglet.north = owl;
+        owl.east = robin;
+        owl.south =piglet;
+        robin.east = rabbit;
+        robin.north = kanga;
+        robin.south = pooh;
+        robin.west =owl;
+        rabbit.east = gopher;
+        rabbit.south = bees;
+        rabbit.west =robin;
+        gopher.west =rabbit;
+        rabbit.north = eyeore;
+        rabbit.south =robin;
+        eyeore.south = kanga;
+        eyeore.east =heffalumps;
+        heffalumps.west =eyeore;
+
+        // Players
+        let player = {
+            location : tigger
+        }
+        function move(directions){
+            if (player.location[directions] == undefined){
+                console.log("Wrong way");
+            }
+            else{
+                player.location = player.location[directions];
+                console.log("Moved to " + player.location['character'])
+            }
+        }
+
+    </script>
+</body>
+</html>
