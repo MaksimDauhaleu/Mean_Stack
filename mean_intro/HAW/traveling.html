@@ -7,23 +7,57 @@
 <body>
     <script>
         // Objects
-            let tigger = {"character" : "Tigger"};
-            let pooh = {"character" : "Winnie the Pooh"};
-            let bees = {"character" : "Bees"};
-            let piglet = {"character" : "Piglet"};
-            let owl = {"character" : "Owl"};
-            let robin = {"character" : "Chistopher Robin"};
-            let rabbit = {"character" : "Rabbit"};
-            let gopher = {"character" : "Gopher"};
-            let kanga = {"character" : "Kanga"};
-            let eyeore= {"character" : "Eyeore"};
-            let heffalumps = {"character" : "Heffalumps"};
+            let tigger = {"character" : "Tigger",    
+            greet: function(){
+                console.log("Tigger greet");
+            }};
+            let pooh = {"character" : "Winnie the Pooh", 
+            greet: function(){
+                console.log("pooh greet");
+            }};
+            let bees = {"character" : "Bees",
+            greet: function(){
+                console.log("bees greet");
+            }};
+            let piglet = {"character" : "Piglet",
+            greet: function(){
+                console.log("piglet greet");
+            }};
+            let owl = {"character" : "Owl",
+            greet: function(){
+                console.log("owl greet");
+            }};
+            let robin = {"character" : "Chistopher Robin",
+            greet: function(){
+                console.log("robin greet");
+            }};
+            let rabbit = {"character" : "Rabbit",
+            greet: function(){
+                console.log("rabbit greet");
+            }};
+            let gopher = {"character" : "Gopher",
+            greet: function(){
+                console.log("gopher greet");
+            }};
+            let kanga = {"character" : "Kanga",
+            greet: function(){
+                console.log("kanga greet");
+            }};
+            let eyeore= {"character" : "Eyeore",
+            greet: function(){
+                console.log("eyeore greet");
+            }};
+            let heffalumps = {"character" : "Heffalumps",
+            greet: function(){
+                console.log("heffalumps greet");
+            }};
 
         // Directions
         tigger.north = pooh;
         pooh.south = tigger;
         pooh.west = piglet;
         pooh.east = bees;
+        pooh.north = robin;
         bees.west = pooh;
         bees.north = rabbit;
         piglet.east = pooh;
@@ -48,13 +82,17 @@
         let player = {
             location : tigger
         }
+
+
         function move(directions){
             if (player.location[directions] == undefined){
                 console.log("Wrong way");
             }
             else{
                 player.location = player.location[directions];
-                console.log("Moved to " + player.location['character'])
+                character = player.location[directions];
+                console.log("You are now at " + player.location['character']);
+                console.log(player.location.greet());
             }
         }
 
