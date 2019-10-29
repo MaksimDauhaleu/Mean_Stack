@@ -6,6 +6,7 @@
 </head>
 <body>
     <script>
+
         // Objects
             let tigger = {"character" : "Tigger",    
             greet: function(){
@@ -52,6 +53,11 @@
                 console.log("heffalumps greet");
             }};
 
+
+        // Houses
+
+        let houses = [kanga, gopher, eyeore, heffalumps, rabbit, robin, owl, piglet, pooh, tigger]
+
         // Directions
         tigger.north = pooh;
         pooh.south = tigger;
@@ -73,17 +79,21 @@
         rabbit.west =robin;
         gopher.west =rabbit;
         rabbit.north = eyeore;
-        rabbit.south =robin;
+        kanga.north = eyeore;
+        kanga.south=robin;
         eyeore.south = kanga;
         eyeore.east =heffalumps;
         heffalumps.west =eyeore;
 
         // Players
         let player = {
-            location : tigger
+            location : tigger,
+            honey : false,
+            mission: null,
         }
+        console.log("Your locations: " , player.location)
 
-
+        // Functions
         function move(directions){
             if (player.location[directions] == undefined){
                 console.log("Wrong way");
@@ -96,6 +106,35 @@
             }
         }
 
+        function pickUp(){
+            if (player.location == bees){
+                player.honey = true;
+                console.log("You collect honey from bees!")
+            }
+            else{
+                console.log("There is no honey at this location")
+            }
+        }
+
+        function mission(){
+            drop_index = Math.floor(Math.random() * houses.length);
+            player.mission = houses[drop_index];
+            // console.log("Player mission: ", player.mission.character)
+            console.log("MISSIONS: Collect honey for " + player.mission.character +"! TIPS:to pick up honey type 'pickUp()' for drop off 'drop()'.  ")
+        }
+        mission();
+
+        function drop(){
+            if (player.location == player.mission && player.honey == true){
+                console.log('Congrats!You delivered the honey to' + player.mission.character);
+                player.honey = false;
+                mission();
+            }
+            else{
+                console.log("Whoops!This is not the place for honey!");
+            }
+        }
     </script>
+    <img src="https://s3.amazonaws.com/General_V88/boomyeah2015/codingdojo/curriculum/content/chapter/hundredacrewood.png" alt="Opps">
 </body>
 </html>
