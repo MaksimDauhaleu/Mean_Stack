@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 1</title>
+</head>
+<body>
+    <script>
+        // Objects
+        let users = {
+            employees: [
+                {'first_name':  'Miguel', 'last_name' : 'Jones'},
+                {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+                {'first_name' : 'Nora', 'last_name' : 'Lu'},
+                {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+            ],
+            managers: [
+            {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+            {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+            ]
+        };
+
+        // Functions
+        function display_users(){
+            console.log("Emoloyees:")
+            var count_e = 1;
+            for (employe of users.employees){
+                console.log( count_e + " -",employe.last_name,",",employe.first_name,"- ", (employe.last_name.length + employe.first_name.length))
+                count_e++;
+            }
+            var count_m = 1;
+            console.log("Managers:")
+            for (manager of users.managers){
+                console.log(count_m + " -",manager.last_name,",",manager.first_name,"- ", (manager.last_name.length + manager.first_name.length))
+                count_m++;
+            }
+        }
+        display_users();
+    
+    </script>
+
+
+</body>
+</html>
