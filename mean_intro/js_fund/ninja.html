@@ -26,12 +26,12 @@
     <script>
         function ninja(name){
             var speed = 3;
-            var strength = 3;
+            var strength = 1;
             this.name = name;
             this.health = 100;
 
             ninja.prototype.sayName = function(){
-                console.log("Hi my name is "+name+"!");
+                console.log("Hi my name is "+this.name+"!");
             }
             ninja.prototype.showStats = function(){
                 console.log("Name: "+this.name+", Health: "+this.health+", Speed: "+speed+", Strength: "+strength)
@@ -41,13 +41,36 @@
                 this.health = this.health + 10;
                 strength += 3;
             }
+            ninja.prototype.punch = function(target){
+                target.health -= 10;
+                console.log("You did a punch");
+                console.log(reload())
+            } 
+            ninja.prototype.kick = function(target){
+                target.health -= strength*15
+                console.log("You did a kick");
+                console.log(reload())
+            }
         }
-        var ninja1 = new ninja("Maksim");
-        ninja1.sayName();
-        ninja1.drinkSake();
-        ninja1.drinkSake();
-        var ninja2 = new ninja("David");
-        ninja1.sayName();
+        var Maksim = new ninja("Maksim");
+        var David = new ninja("David");
+        var Adrian = new ninja("Adrian");
+        var Chris = new ninja("Chris");
+        var Jason = new ninja("Jason");
+        
+        // Names
+        console.log("Names: ")
+        Maksim.sayName();
+        David.sayName();
+        // Stats
+        function reload(){
+            console.log("Stats: ")
+            Maksim.showStats();
+            David.showStats();
+            Adrian.showStats();
+            Chris.showStats();
+            Jason.showStats();
+        }
     </script>
 </body>
 </html>
