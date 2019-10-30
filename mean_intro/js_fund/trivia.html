@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Trivia</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <style>
+        #questions{
+            width: 100px;
+            height: 150px;
+            font-size: 70%;
+            color: white;
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+
+    
+            $.get("https://opentdb.com/api.php?amount=10", dispQuestions)
+            
+            function dispQuestions(data){
+                console.log(data.results);
+                $(".question").append(data.results[0].question)
+                $(".question1").append(data.results[1].question)
+                $(".question2").append(data.results[2].question)
+                $(".question3").append(data.results[3].question)
+                $(".question4").append(data.results[4].question)
+            }
+        })
+    </script>
+
+    <div class="container" align="center">
+        <div class="card">
+            <div class="card-body">
+                <div id="questions" class="question" style="background-color: lightsalmon">
+                    
+                </div>
+                <div id="questions" class="question1" style="background-color: green">
+                    
+                </div>
+                <div id="questions" class="question2" style="background-color: red">
+                    
+                </div>
+                <div id="questions" class="question3" style="background-color: black">
+                    
+                </div>
+                <div id="questions" class="question4" style="background-color: blue">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
