@@ -1,0 +1,53 @@
+<script>
+    // Assignment: Ninja Class
+    // Create a new object constructor called Ninja with the following attributes:
+
+    // name
+    // health
+    // speed (private)
+    // strength (private)
+    // Speed and strength should be 3 by default. Health should be 100 by default.
+
+    // Ninja should have the following methods:
+
+    // sayName() - This should log that Ninja's name to the console.
+    // showStats() - This should show the Ninja's name, strength, speed, and health.
+    // drinkSake() - This should add +10 Health to the Ninja
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Ninja</title>
+</head>
+<body>
+    <script>
+        function ninja(name){
+            var speed = 3;
+            var strength = 3;
+            this.name = name;
+            this.health = 100;
+
+            ninja.prototype.sayName = function(){
+                console.log("Hi my name is "+name+"!");
+            }
+            ninja.prototype.showStats = function(){
+                console.log("Name: "+this.name+", Health: "+this.health+", Speed: "+speed+", Strength: "+strength)
+            }
+
+            ninja.prototype.drinkSake = function(){
+                this.health = this.health + 10;
+                strength += 3;
+            }
+        }
+        var ninja1 = new ninja("Maksim");
+        ninja1.sayName();
+        ninja1.drinkSake();
+        ninja1.drinkSake();
+        var ninja2 = new ninja("David");
+        ninja1.sayName();
+    </script>
+</body>
+</html>
