@@ -6,7 +6,7 @@ app.get('/', (request, response) => {
    response.send("Hello Express");
 });
 
-
+fs.readFile()
 
 
 
