@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deck of Cards</title>
+</head>
+<body>
+    <script>
+        var suit = {
+            0:"\u2660",
+            1:"\u2666",
+            2:"\u2665", 
+            3:"\u2663"
+        }
+
+        var s_value = {
+            1:"Ace",
+            2:"Two",
+            3:"Three",
+            4:"Four",
+            5:"Five",
+            6:"Six",
+            7:"Seven",
+            8:"Eight",
+            9:"Nine",
+            10:"Ten",
+            11:"Jack",
+            12:"Queen",
+            13:"King"
+        }
+
+        var n_value = {
+            1:1,
+            2:2,
+            3:3,
+            4:4,
+            5:5,
+            6:6,
+            7:7,
+            8:8,
+            9:9,
+            10:10,
+            11:11,
+            12:12,
+            13:13
+        }
+        class Card {
+            constructor(suit, s_value, n_value){
+                this.suit = suit;
+                this.s_value = s_value;
+                this.n_value = n_value;
+            }
+            show_card(){
+                console.log(`Suit: ${this.suit} String Value: ${this.s_value} String Value: ${this.n_value}`)
+            }
+        }
+        class Deck {
+            constructor(){
+                this.cards =[];
+                for(var i = 0;i<4;i++){
+                    for(var j = 1;j<=13;j++){
+                       this.cards.push((new Card(suit[i],s_value[j],n_value[j])));
+                    }
+                }
+            }
+            show_cards(){
+                console.log(this.cards);
+            }
+        }
+        class Player {
+            constructor(){
+
+            }
+        }
+        var Desk1 = new Deck()
+        Desk1.show_cards()
+    </script>
+</body>
+</html>

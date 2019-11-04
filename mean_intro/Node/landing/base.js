@@ -18,8 +18,8 @@ const server = http.createServer(function (request, response){
         });
     }
     else if (request.url === "/dojos/new") {
-        fs.readFile('dojos.html', 'utf8', (errors, contents) => {
-            response.writeHead(200, {'Content-type': 'text/html'});
+        fs.readFile('css/dojo.css', 'utf8', (errors, contents) => {
+            response.writeHead(200, {'Content-type': 'text/css'});
             response.write(contents); 
             response.end();
         });
