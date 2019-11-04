@@ -1,32 +1,26 @@
 const express = require("express");
-const app = express();
-const nunjucks = require("nunjucks")   
+const app = express();  
 
 //Static File SetUp
 app.use(express.static(__dirname + "/static"));
 
 
-
-
 // Templates Engine SetUp
-app.set('view engine', 'njk');
-nunjucks.configure('views', {
-    express: app
-})
+app.set('view engine', 'ejs');
 
 // Routes
 app.get("/", (req, res) => {
-    res.render('cars');
+    res.render('index.html');
 });
 
-app.get("/users", (req, res) => { 
+app.get("/main", (req, res) => { 
     var users_array = [
         {name: "Michael", email: "michael@codingdojo.com"}, 
         {name: "Jay", email: "jay@codingdojo.com"}, 
         {name: "Brendan", email: "brendan@codingdojo.com"}, 
         {name: "Andrew", email: "andrew@codingdojo.com"}
     ];
-    res.render('users', users_array);
+    res.render('main', {users_array});
 });
 
 
