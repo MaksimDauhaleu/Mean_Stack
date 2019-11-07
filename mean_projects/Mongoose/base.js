@@ -79,7 +79,6 @@ app.post('/edit_pr/:id',(req,res)=>{
 
 app.get('/delete/:id',(req,res)=>{
     var id = req.params.id;
-    // console.log(id,"*****")
     Animal.findByIdAndRemove(id, (err) => {
         if(err) {
             res.redirect('/');
