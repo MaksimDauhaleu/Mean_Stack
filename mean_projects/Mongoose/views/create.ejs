@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/create" method="POST">
+        <div class="container" align = "center">
+            <h1>Create Animal</h1>
+            <a href="/">Back to DashBoard</a>
+            <h3>Name: <input type="text" style="color: lightgrey;" name="name" onfocus="if (this.value=='Animal Name') this.value='';" value="Animal Name"></h3>
+            <h3>Class: <input type="text" style="color: lightgrey;" name="class" onfocus="if (this.value=='Class of Animal') this.value='';" value="Class of Animal"></h3>
+            <h3>Family: <input type="text" name="family" style="color: lightgrey;" onfocus="if (this.value=='Animal Family') this.value='';" value="Animal Family"></h3>
+            <button>Create</button>
+        </div>
+    </form>
+</body>
+</html>

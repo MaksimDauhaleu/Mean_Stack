@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" align = "center">
+        <h1>All Animals</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Class</th>
+                    <th scope="col">Family</th>
+                    <th scope="col" >Options</th>
+                </tr>
+            </thead>
+            <tbody>
+            <%  for(let x of Animals) {%>
+                <tr>
+                    <td><%= x.name %></td>
+                    <td><%= x.class %></td>
+                    <td><%= x.family %></td>
+                    <td>
+                        <a href="/edit/<%= x.id %>"><font style="color:magenta;">Edit</font></a>
+                        <a href="/delete/<%= x.id %>"> <font style="color: limegreen;">Delete</font></a>
+                    </td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+        <a type="button" href="/create">Create</a>
+</body>
+</html>
