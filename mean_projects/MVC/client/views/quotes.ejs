@@ -1,0 +1,22 @@
+<head>
+    <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .main-contant{
+            width: 800px;
+        }
+        #quote{
+            height: 100px;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(160, 157, 157);">
+        <div class="container"; align = "center">
+            <%  for(let quote of quotes) {%>
+                <h1><%= quote.name %></h1>
+                <h1><%= quote.notName %></h1>
+            <% } %>
+        </div>
+</body>
+    
+    
