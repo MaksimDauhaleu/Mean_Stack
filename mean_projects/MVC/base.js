@@ -1,65 +1,44 @@
+// IMPORTS
 const express = require("express");
 const app = express();  
+var session = require("express-session");
 const mongoose = require('mongoose');
 const flash = require('express-flash');
+var bodyParser = require("body-parser");
 
 
-//File SetUp
+// CONFIGURATIONS
+app.use(flash());
 app.use(express.static(__dirname + "/static"));
-app.use('views',__dirname + "/client/views");
 app.use(express.urlencoded({extended: true}));
-mongoose.connect('mongodb://localhost/name_of_your_DB', {useNewUrlParser: true});
+app.use(bodyParser.urlencoded({useNewUrlParser: true}));
+app.use(session({
+    secret: 'keyboardkitteh',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+}))
 
-
-
-// Templates Engine SetUp
+app.set('views',__dirname + "/client/views");
 app.set('view engine', 'ejs');
 
 
 
-
-// Database
-const QuoteSchema = new mongoose.Schema({
-    name: { type: String, required: true, minlength: 6},
-    notName: { type: String},
-   })
-   const Quote = mongoose.model('Quote', QuoteSchema);
+// DATABASE
+mongoose.connect('mongodb://localhost/name_of_your_DB', {useNewUrlParser: true});
+require("./server/config/mongoose.js");
 
 
 
+//ROUTES
+require("./server/config/routes.js")(app);
 
 
-//Routes
-app.get('/',(req,res)=>{
-    res.render('index')
+
+
+
+//PORT
+app.listen(8000, function(){
+    console.log("Listening on port: 8000");
 })
 
-
-app.post('/quotes',(req,res)=>{
-    const quote = new Quote();
-    quote.name = req.body.name;
-    quote.notName = req.body.notName;
-    quote.save()
-        .then(newUserData => {
-            console.log('user created: ', newUserData);
-            res.redirect('/quotes')
-        })
-        .catch(err => {
-            console.log(err);
-            res.redirect('/')
-        });
-    })
-
-
-app.get('/quotes',(req,res)=>{
-    Quote.find()
-        .then(quotes =>{
-            res.render('quotes',{quotes})
-        })
-        .catch(err => res.json(err))
-})
-
-
-
-// Listening port
-app.listen(8000, () => console.log("listening on port 8000"))
