@@ -9,6 +9,7 @@ var bodyParser = require("body-parser");
 
 // CONFIGURATIONS
 app.use(flash());
+app.use(express.static( __dirname + '/public/dist/public' ));
 app.use(express.static(__dirname + "/static"));
 app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.urlencoded({useNewUrlParser: true}));
