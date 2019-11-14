@@ -96,6 +96,11 @@
                 </div>
              </div>
              <div class="main">
+                <% if(messages.registration) { %>
+                        <% for (var x of messages.registration) { %>
+                        <h3><%= x %></h3>
+                        <% } %>
+                <% } %>
                 <div class="col-md-6 col-sm-12">
                    <div class="login-form">
                       <form action="/user_login" method="POST">

@@ -11,7 +11,7 @@ var bodyParser = require("body-parser");
 app.use(flash());
 app.use(express.static( __dirname + '/public/dist/public' ));
 app.use(express.static(__dirname + "/static"));
-app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 app.use(bodyParser.urlencoded({useNewUrlParser: true}));
 app.use(session({
     secret: 'keyboardkitteh',

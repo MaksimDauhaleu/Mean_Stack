@@ -34,5 +34,11 @@ module.exports = {
                 console.log(err);
                 res.redirect('/')
             });
+    },
+
+    js: function(req,res){
+        Quote.find()
+        .then(quotes => res.json(quotes))
+        .catch(err => res.json(err));
     }
 }
