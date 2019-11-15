@@ -7,6 +7,21 @@
   <title>Cakes</title>
 </head>
 <body>
+  <div class="content" role="main">
+    <h1 >{{text}}</h1>
+    <h1>Hello</h1>
+    <p *ngFor="let snack of snacks">{{snack}}</p>
 
+    <h1>Third task</h1>
+    <p>{{snacks[2]}}</p>
+    <button (click)="onButtonClickParam(5)">Click me!</button>
+    <div>
+      <p *ngFor="let car of cars"> 
+        {{car}}
+        <button (click)="infoButtom(car)">Info</button>
+      </p>
+      <p>{{cars_info}}</p>
+    </div>
+  </div>
 </body>
 </html>
