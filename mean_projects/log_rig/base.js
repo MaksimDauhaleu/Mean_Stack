@@ -41,6 +41,8 @@ app.get('/',(req,res) =>{
 
 
 app.use(flash())
+
+
 app.get('/login',(req,res) =>{
     res.render('login')
 })

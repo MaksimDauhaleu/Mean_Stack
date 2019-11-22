@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+    <div class="container">
+    <div class="form-group">
+        <form (submit)="createProduct()" method="POST">
+            <h1>Create Product</h1>
+            <h3>Name: <input class="form-control" placeholder="Name of the Product" type="text" name="newProduct.name" [(ngModel)]="newProduct.name"></h3>
+            <h3>Price: <input class="form-control" type="number" name="newProduct.price" [(ngModel)]="newProduct.price"></h3>
+            <h3>Quantity:: <input class="form-control" type="number" name="newProduct.qty" [(ngModel)]="newProduct.qty"></h3>
+            <h6 *ngIf="error_o['qty']" class="text-danger">{{error_o['qty'].message}}</h6>
+            <h6 *ngIf="error_o['price']" class="text-danger">{{error_o['price'].message}}</h6>
+            <h6 *ngIf="error_o['name']" class="text-danger">{{error_o['name'].message}}</h6> 
+            <input class="button btn btn-secondary btn-lg" type="submit" value="Create">
+            <a class="button btn btn-secondary btn-lg" [routerLink]="['/']">Cancel</a>
+        </form>
+    </div>
+</div>
+</body>

@@ -1,0 +1,16 @@
+.container{
+    padding-top:50px;
+}
+*{
+    font-family: Georgia, serif;
+}
+a{
+    padding-left: 10px;
+}
+body{  
+    height: 1000px; 
+    background-image: linear-gradient(to top, rgb(163, 163, 163), #343A40);
+}
+table{
+    border-radius:10px;
+}

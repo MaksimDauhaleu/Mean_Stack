@@ -1,0 +1,21 @@
+.h_t{
+    margin-left: 100px;
+    display: inline-block;
+    font-size: 150%;
+}
+.h_o{
+    display: inline-block;
+}
+.container{
+    padding-top: 100px;
+}
+*{
+    font-family: Georgia, serif;
+}
+body{  
+    height: 1000px; 
+    background-image: linear-gradient(to top, rgb(163, 163, 163), #343A40);
+}
+.btn{
+    margin-left:20px;
+}

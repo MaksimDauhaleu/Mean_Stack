@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+    <div class="container">
+    <div class="form-group">
+        <form (submit)="createProduct()" method="POST">
+            <h1>Create Product</h1>
+            <h3>Pet Name: <input class="form-control" placeholder="Name of the Pet" type="text" name="newPet.name" [(ngModel)]="newPet.name"></h3>
+            <h3>Pet Type: <input class="form-control" placeholder="Type of the Pet" type="text" name="newPet.type" [(ngModel)]="newPet.type"></h3>
+            <h3>Description: <input class="form-control" placeholder="Describe the Pet" type="text" name="newPet.description" [(ngModel)]="newPet.description"></h3>
+            <h3>Skills:</h3> 
+            <div id="no">
+                <h3>Skill:<input class="form-control" placeholder="Type skill of the pet(Optional)" type="text" name="newPet.skill_1" [(ngModel)]="newPet.skill_1"></h3>
+                <h3>Skill:<input class="form-control" placeholder="Type skill of the pet(Optional)" type="text" name="newPet.skill_2" [(ngModel)]="newPet.skill_2"></h3>
+                <h3>Skill:<input class="form-control" placeholder="Type skill of the pet(Optional)" type="text" name="newPet.skill_3" [(ngModel)]="newPet.skill_3"></h3>
+            </div>
+            <h6 *ngIf="error_o['name']" class="text-danger">{{error_o['name'].message}}</h6> 
+            <h6 *ngIf="error_o['type']" class="text-danger">{{error_o['type'].message}}</h6>
+            <h6 *ngIf="error_o['description']" class="text-danger">{{error_o['description'].message}}</h6>
+            <input class="button btn btn-secondary btn-lg" type="submit" value="Create">
+            <a class="button btn btn-secondary btn-lg" [routerLink]="['/']">Cancel</a>
+        </form>
+    </div>
+</div>
+</body>

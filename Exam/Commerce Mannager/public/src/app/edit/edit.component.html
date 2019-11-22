@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Product</h1>
+    <div id="form-group">
+    <form (submit)="editSubmit()">
+        <h3>Name: <input class="form-control" type="text" name="editProduct.name" [(ngModel)]="editProduct.name"></h3>
+        <h3>Price for one Ounce: <input class="form-control" type="number" name="editProduct.price" [(ngModel)]="editProduct.price"></h3>
+        <h3>Quantity: <input class="form-control" type="number" name="editProduct.qty" [(ngModel)]="editProduct.qty"></h3>
+        <h6 *ngIf="error_o['qty']" class="text-danger">{{error_o['qty'].message}}</h6>
+        <h6 *ngIf="error_o['price']" class="text-danger">{{error_o['price'].message}}</h6>
+        <h6 *ngIf="error_o['name']" class="text-danger">{{error_o['name'].message}}</h6> 
+        <input class="button btn btn-secondary" type="submit" value="Update">
+    </form>
+    <button class="button btn btn-secondary" (click)="reset(editProduct._id)">Reset</button>
+    </div>
+  </div>
+</body>
+</html>

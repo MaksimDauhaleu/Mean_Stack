@@ -1,0 +1,18 @@
+#title_h{
+    margin-left: 35%;
+    font-weight: bolder;
+    vertical-align: middle;
+}
+.form-group{
+    padding-top: 100px;
+}
+.button{
+    margin-left: 27%;
+}
+*{
+    font-family: Georgia, serif;
+}
+body{  
+    height: 1000px; 
+    background-image: linear-gradient(to top, rgb(163, 163, 163), #343A40);
+}

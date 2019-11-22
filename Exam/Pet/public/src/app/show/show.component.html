@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+    <div class="container">
+        <h1>Product Description</h1>
+        <div class="form-group one">
+            <h1 class="h_o">Name:</h1>
+            <h4 class="h_t"> {{ product.name }} </h4>
+        </div>
+        <div class="form-group 2">
+            <h1 class="h_o">Pet Type:</h1>
+            <h4 class="h_t"> {{ product.type }} </h4>
+        </div>
+        <div class="form-group 3">
+            <h1 class="h_o">Description:</h1>
+            <h4 class="h_t"> {{ product.description }}</h4>
+        </div>
+
+        <div class="form-group">
+            <h1 class="h_o">Skills:</h1>
+            <ul class="list-group">
+                <li class="h_t"> 1:{{ product.skill_1 }}</li>
+                <li class="h_t"> 2:{{ product.skill_2 }}</li>
+                <li class="h_t"> 3:{{ product.skill_3 }}</li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <h1 class="h_o">Likes:</h1>
+            <h4 class="h_t"> {{ likes }}</h4>
+        </div>
+    
+        <button type="submit" class="btn btn-info" (click) = "deleteProduct(product._id)">Adopt this pet!</button>
+        <button type="submit" class="btn btn-info" [routerLink]="['/dashboard']" >BACK</button>
+        <button type="submit" class="btn btn-info" (click) = "countPlus(product._id)" >Like this Pet</button>
+    </div>
+</body>

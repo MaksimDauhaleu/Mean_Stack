@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+    <div class="container">
+        <h1>Product Description</h1>
+        <div class="form-group one">
+            <h1 class="h_o">Name:</h1>
+            <h4 class="h_t"> {{ product.name }} </h4>
+        </div>
+        <div class="form-group 2">
+            <h1 class="h_o">Quantity:</h1>
+            <h4 class="h_t"> {{ product.qty }} </h4>
+        </div>
+        <div class="form-group 3">
+            <h1 class="h_o">Price:</h1>
+            <h4 class="h_t"> {{ product.price }}$</h4>
+        </div>
+    
+        <button type="submit" class="btn btn-secondary" [routerLink]="['/dashboard']" >BACK</button>
+        <button type="submit" class="btn btn-secondary" (click) = "deleteProduct(product._id)">DELETE</button>
+    </div>
+</body>

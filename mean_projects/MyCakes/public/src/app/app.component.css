@@ -1,0 +1,15 @@
+.col-sm{
+    margin: 10px;
+    background-color: grey;
+}
+.col-md{
+    margin: 10px;
+    background-color: grey;
+}
+#button_one{
+    margin-left: 50px;
+    margin-bottom: 1px;
+}
+#last{
+    width: 50%;
+}

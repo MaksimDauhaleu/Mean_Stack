@@ -1,0 +1,16 @@
+*{
+    font-family: Georgia, serif;
+}
+a{
+    padding-left: 5px;
+}
+btn{
+    display: inline-block;
+}
+body{  
+    height: 1000px; 
+    background-image: linear-gradient(to top, rgb(163, 163, 163), #343A40);
+}
+.container{
+    padding-top: 100px;
+}

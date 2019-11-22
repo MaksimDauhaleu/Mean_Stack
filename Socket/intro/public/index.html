@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+    #messageArea{
+      
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="userFormArea" class="row">
+            <div class="col-md-12">
+                <form id="userForm">
+                    <div class="form-group">
+                        <h4>Enter Username</h4>
+                        <input class="form-control" type="text" id="username">
+                    </br>
+                        <input class="btn btn-secondary" type="submit" value="Login" >
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+
+
+        <div id="messageArea" class="row">
+            <div class="col-md-4">
+                <div class="card card-body bg-light">
+                     <h2>Users Online</h2>
+                    <ul class="list-group" id="users"></ul>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <form id="messageForm">
+                    <div class="form-group">
+                        <div class="chat" id="chat"></div>
+                        <h4>Enter Message</h4>
+                        <input class="form-control" type="text" id="message">
+                        </br>
+                        <input class="btn btn-secondary" type="submit" value="Send Message" >
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            const socket = io.connect();
+            const $messageForm = $('#messageForm');
+            const $message = $('#message');
+            const $chat = $('#chat');
+            const $messageArea = $('#messegeArea');
+            const $userFormArea = $('#userFormArea');
+            const $userForm = $('#userForm');
+            const $username = $('#username');
+            const $users = $('#users');
+
+            $messageForm.submit(function(e){
+                e.preventDefault();
+                socket.emit('send message', $message.val())
+                $message.val('')
+            })
+
+            socket.on('new message', function(data){
+                $chat.append('<div class = "card card-body bg-light"><strong>'+ data.user +'</strong>'+ data.msg +'</div> ')
+            })
+
+            $userForm.submit(function(e){
+                e.preventDefault();
+                socket.emit('new user', $username.val(), function(data){
+                    console.log(data)
+                    if(data){
+                        $userFormArea.hide();
+                        $messageArea.show();
+                    }
+                })
+                $username.val('')
+            })
+
+            socket.on('get users', function(data){
+                console.log(data)
+                var html = '';
+                for(i = 0;i < data.length;i++){
+                    html += '<li class = "list-group-item">'+ data[i] +'</li>'
+                }
+                $users.html(html)
+            });
+        });
+    </script>
+</body>
+</html>

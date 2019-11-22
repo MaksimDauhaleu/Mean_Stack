@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+
+            <a class="navbar-brand" [routerLink]="['/create']">Create</a>
+            <a class="navbar-brand" [routerLink]="['/edit/:id']">Edit</a>
+            <a class="navbar-brand" [routerLink]="['/login']">Login</a>
+            <a [routerLink]="['/dashboard']"> <h1>PET SHELTER</h1></a>
+            <a class="navbar-brand" [routerLink]="['/show/:id']">Show</a>
+            <a class="navbar-brand" [routerLink]="['/dashboard']">Dashboard</a>
+            <a class="navbar-brand" [routerLink]="['/regist']">Regist</a>
+        </nav>
+</body>
+
+
+<router-outlet></router-outlet> 
