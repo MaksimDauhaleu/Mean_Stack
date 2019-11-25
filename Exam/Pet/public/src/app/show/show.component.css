@@ -8,7 +8,16 @@
 }
 .container{
     padding-top: 100px;
+    display: inline-block;
+    width: 500px;
+    margin-left: 300px;
 }
+.contner{
+    padding-top: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+
 *{
     font-family: Georgia, serif;
 }

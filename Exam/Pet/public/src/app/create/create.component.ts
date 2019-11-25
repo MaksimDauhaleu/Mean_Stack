@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./create.component.css'],
 })
 export class CreateComponent implements OnInit {
-    newPet = {name: "", type: "", description: "",skill_1:"", skill_2:"", skill_3:""};
+    newPet = {name: "", type: "",image:"", description: "",skill_1:"", skill_2:"", skill_3:""};
     error_o: any = {};
 
   constructor(private _httpService: HttpService, private _router: Router) { }

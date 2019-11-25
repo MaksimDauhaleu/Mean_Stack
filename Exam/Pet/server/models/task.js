@@ -4,6 +4,7 @@ var ProductSchema = new mongoose.Schema({
     name: {type: String, required: [true, "Name is Required"], minlength: [3, "Name is less than 3"] },
     type: {type: String, required: [true, "Type is Required"], minlength: [3, "Type is less than 3"] },
     description: {type: String, required: [true, "Description is Required"], minlength: [3, "Description is less than 3"] },
+    image: {type:String, required: [true, "Image is Required"],},
     skill_1: String,
     skill_2: String,
     skill_3: String,

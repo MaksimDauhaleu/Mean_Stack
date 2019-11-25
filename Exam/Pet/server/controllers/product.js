@@ -62,7 +62,7 @@ module.exports = {
 
     addProduct: function(req, res){
         console.log(req.body);
-        Product.create({name: req.body.name, type: req.body.type, description: req.body.description, skill_1: req.body.skill_1, skill_2: req.body.skill_2, skill_3: req.body.skill_3}, function(err, product){
+        Product.create({name: req.body.name,image: req.body.image ,type: req.body.type, description: req.body.description, skill_1: req.body.skill_1, skill_2: req.body.skill_2, skill_3: req.body.skill_3}, function(err, product){
             if(err){
                 res.json({message: "Error!", error: err});
             }

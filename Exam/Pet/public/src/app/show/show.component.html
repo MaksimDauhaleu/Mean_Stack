@@ -33,4 +33,7 @@
         <button type="submit" class="btn btn-info" [routerLink]="['/dashboard']" >BACK</button>
         <button type="submit" class="btn btn-info" (click) = "countPlus(product._id)" >Like this Pet</button>
     </div>
+    <div class="contner">
+        <img src="{{ product.image }}" width="500" height="500" alt="No internet connection">
+    </div>
 </body>
